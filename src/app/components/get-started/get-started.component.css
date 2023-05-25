@@ -1,21 +1,16 @@
 @font-face {
   font-family: 'Custom';
-  src: url('/assets/Fonts/Expose-Regular.otf') format('opentype');
+  src: url('~src/assets/Fonts/Expose-Regular.otf') format('opentype');
 }
 
 .title{
   font-size: 30px;
 }
 
-
 img {
   height: 500px;
 
 }
-
-
-/*font-family: 'Custom', sans-serif;*/
-/*color: red;*/
 
 .start {
   position: relative;
