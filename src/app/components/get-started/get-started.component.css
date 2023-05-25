@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Custom';
+  src: url('/assets/Fonts/Expose-Regular.otf') format('opentype');
+}
+
+.title{
+  font-size: 30px;
+}
+
+
+img {
+  height: 500px;
+
+}
+
+
+/*font-family: 'Custom', sans-serif;*/
+/*color: red;*/
+
+.start {
+  position: relative;
+  top: -50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.start:hover{
+ scale: 110%;
+  rotate: -3deg;
+}
+
+
+h1 {
+  font-family: 'Custom', sans-serif;
+  color: white;
+
+}
+
+.father {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.word{
+  display: flex;
+  font-size: 30px;
+}
+
+.red{
+  color: red;
+  margin: 0;
+}
+
+.white{
+  color: white;
+  margin: 0;
+}
+
+
+.parallelogram {
+  width: 300px;
+  height: 100px;
+  display: none;
+  background-color: rgba(0, 255, 233, 0.54);
+  transform: skewX(-20deg);
+  position: relative;
+  top: -120px;
+  left: 600px;
+  z-index: -1;
+
+}
+
+
+.parallelogram.parallelogramAnimation {
+  display: inline-block;
+  animation: tiltBounce 1s infinite;
+}
+
+@keyframes tiltBounce {
+  0% {
+    width: 25%; transform: scale(1.25,1) skewX(20deg) translateY(3px) rotateX(40deg) rotateY(10deg) rotateZ(-10deg);
+  }
+  50% { width: 25%; transform: scale(1.25,1.1) skewX(-15deg) translateY(-2px) translateZ(-30px); }
+  100% { width: 25%; transform: scale(1.25,1) skewX(20deg) translateY(3px) rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg); }
+}
+
+/*@keyframes parallelogramAnimation {*/
+/*  0% {*/
+/*    transform: skewX(-10deg) translateX(0) rotate(5deg);*/
+/*  }*/
+
+/*  20% {*/
+/*    transform: skewX(-20deg) translateX(0) rotate(10deg);*/
+/*  }*/
+
+/*  50% {*/
+/*    transform: skewX(20deg) translateX(-50px) rotate(-5deg);*/
+/*  }*/
+
+/*  80% {*/
+/*    transform: skewX(10deg) translateX(-50px) rotate(5deg);*/
+/*  }*/
+
+/*  100% {*/
+/*    transform: skewX(-20deg) translateX(0) rotate(-10deg);*/
+/*  }*/
+/*}*/
