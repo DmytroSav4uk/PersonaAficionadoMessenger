@@ -13,6 +13,7 @@ img {
 }
 
 .start {
+  transition: ease-in-out 0.1s;
   position: relative;
   top: -50px;
   display: flex;
@@ -58,14 +59,16 @@ h1 {
 
 
 .parallelogram {
+  margin: 0;
+  transition: ease-in-out 0.1s;
   width: 300px;
   height: 100px;
   display: none;
-  background-color: rgba(0, 255, 233, 0.54);
+  background-color: rgba(0, 255, 255, 0.59);
   transform: skewX(-20deg);
   position: relative;
   top: -120px;
-  left: 600px;
+  /*left: 600px;*/
   z-index: -1;
 
 }

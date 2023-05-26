@@ -1,3 +1,14 @@
+
+<audio #audioElement>
+  <source src="./assets/Audio/hover.wav" type="audio/mpeg">
+</audio>
+
+<audio #ClickSound>
+  <source src="./assets/Audio/click.wav" type="audio/mpeg">
+</audio>
+
+
+
 <div class="father">
   <h1 class="title">Phantom thieves aficionado website</h1>
   <img src="assets/PicturesPNG/getStartedPage/logo.png " alt="logo">
@@ -5,9 +16,13 @@
 
 
   <div class="start"
-
        (mouseenter)="onStartMouseEnter()"
-       (mouseleave)="onStartMouseLeave()">
+       (mouseleave)="onStartMouseLeave()"
+       (click)="PlayClickSound()">
+
+<!--       routerLink="/auth"-->
+
+
 
     <div class="word">
       <h1 class="red">L</h1>
@@ -33,11 +48,13 @@
       <h1 class="white">me</h1>
     </div>
 
-  </div>
 
+
+  </div>
+  <div  class="parallelogram"
+        [class.parallelogramAnimation]="isStartHovered"
+  ></div>
 </div>
 
 
-<div  class="parallelogram"
-     [class.parallelogramAnimation]="isStartHovered"
-></div>
+

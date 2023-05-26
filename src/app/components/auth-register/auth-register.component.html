@@ -1,0 +1,94 @@
+
+
+<audio #hoverSound>
+  <source src="./assets/Audio/hover.wav" type="audio/mpeg">
+</audio>
+
+<audio #clickSound>
+  <source src="./assets/Audio/click.wav" type="audio/mpeg">
+</audio>
+
+<audio #audioElement>
+  <source src="./assets/Audio/music/authTheme.mp3" type="audio/mpeg">
+</audio>
+
+<img class="joker" [class.slide-left]="slideLeft" alt="joker" src="assets/BackgroundPictures/joker.jpg"/>
+<img class="panther" alt="panther" src="assets/BackgroundPictures/panther.png"/>
+
+
+<div [class.fade-in]="fadeIn" class="chooser">
+
+  <div
+    (mouseenter)="onAuthMouseEnter()"
+    (mouseleave)="onAuthMouseLeave()"
+    (click)="LoginClick()"
+    class="auth">
+    <h1>login</h1>
+    <div class="parallelogram"
+         [class.parallelogramAnimation]="isAuthHovered"
+    ></div>
+  </div>
+
+  <div
+    (mouseenter)="onRegisterMouseEnter()"
+    (mouseleave)="onRegisterMouseLeave()"
+    (click)="RegisterClick()"
+    class="register">
+    <h1>register</h1>
+    <div class="parallelogram"
+         [class.parallelogramAnimation]="isRegisterHovered"
+    ></div>
+  </div>
+</div>
+
+<ng-container *ngIf="showRegisterForm">
+  <div class="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password">
+      </div>
+
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+  </div>
+
+  <div class="buttonParallelogram"
+       [class.buttonParallelogramAnimation]="!registerForm.invalid"
+  ></div>
+</ng-container>
+
+<ng-container *ngIf="showLoginForm">
+  <div class="loginForm">
+    <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password">
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid" >Login</button>
+
+
+
+
+
+    </form>
+
+  </div>
+
+  <div class="buttonParallelogram"
+       [class.buttonParallelogramAnimation]="!loginForm.invalid"
+  ></div>
+
+</ng-container>
+

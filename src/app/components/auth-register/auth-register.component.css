@@ -1,0 +1,255 @@
+@font-face {
+  font-family: 'AuthMenu';
+  src: url('~src/assets/Fonts/Persona5MenuFontPrototype-Regular.ttf') format('opentype');
+}
+
+
+@font-face {
+  font-family: 'InputFont';
+  src: url('~src/assets/Fonts/p5hatty-1.ttf') format('opentype');
+}
+
+
+.joker {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  top: 0;
+  left: -250px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.panther {
+  display: none;
+  position: absolute;
+  top: -150px;
+  left: -250px;
+  scale: 75%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.chooser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 250px;
+  right: 300px;
+  font-family: "AuthMenu", sans-serif;
+  font-size: 30px;
+  color: white;
+
+}
+
+.auth h1 {
+  margin: 0;
+}
+
+.register h1 {
+  margin: 0;
+}
+
+.auth {
+  z-index: 1;
+  transition: ease-in-out 0.1s;
+}
+
+.register {
+  z-index: 2;
+  transition: ease-in-out 0.1s;
+}
+
+
+.auth:hover {
+  scale: 110%;
+  rotate: -10deg;
+  cursor: pointer;
+}
+
+.register:hover {
+  scale: 110%;
+  rotate: 10deg;
+  cursor: pointer;
+
+}
+
+
+.registerForm {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 7px;
+  right: 117px;
+  font-family: "AuthMenu", sans-serif;
+  color: white;
+  font-size: 50px;
+}
+
+.loginForm {
+
+
+  position: absolute;
+  bottom: 7px;
+  right: 117px;
+  font-family: "AuthMenu", sans-serif;
+  color: white;
+  font-size: 50px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+input {
+  font-family: "InputFont", sans-serif;
+  font-size: 50px;
+  color: white;
+  background: none;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline: 2px solid red;
+}
+
+label {
+  margin-right: 5px;
+}
+
+.parallelogram {
+  margin: -100px;
+  padding: 0;
+  transition: ease-in-out 0.1s;
+  width: 300px;
+  height: 60px;
+  display: none;
+  background-color: rgba(0, 255, 255, 0.59);
+  transform: skewX(-20deg);
+  position: relative;
+  top: -120px;
+  left: 120px;
+  z-index: -1;
+
+}
+
+
+.parallelogram.parallelogramAnimation {
+  display: inline-block;
+  animation: tiltBounce 1s infinite;
+}
+
+@keyframes tiltBounce {
+  0% {
+    width: 75%;
+    transform: scale(1.25, 1) skewX(20deg) translateY(3px) rotateX(40deg) rotateY(10deg) rotateZ(-10deg);
+  }
+  50% {
+    width: 75%;
+    transform: scale(1.25, 1.1) skewX(-15deg) translateY(-2px) translateZ(-30px);
+  }
+  100% {
+    width: 75%;
+    transform: scale(1.25, 1) skewX(20deg) translateY(3px) rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg);
+  }
+}
+
+
+.slide-left {
+  animation: slideLeftAnimation 1s;
+}
+
+@keyframes slideLeftAnimation {
+  0% {
+    transform: translateX(-100%);
+
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeInAnimation 3s;
+}
+
+
+button {
+  margin-top: 20px;
+  font-family: "AuthMenu", sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  margin-bottom: 200px;
+  transition: ease-in-out 0.2s;
+  scale: 110%;
+  rotate: 5deg;
+}
+
+/*button:active{*/
+/*  transform: scale(1.1);*/
+/*}*/
+
+button:disabled {
+  opacity: 70%;
+  scale: 80%;
+  rotate: -5deg;
+}
+
+.buttonParallelogram {
+  padding: 0;
+  transition: ease-in-out 0.1s;
+  height: 31px;
+  display: none;
+  background-color: rgba(0, 255, 255, 0.59);
+  transform: skewX(-20deg);
+  position: relative;
+  top: 494px;
+  right: -1151px;
+  z-index: -1;
+}
+
+.buttonParallelogramAnimation {
+  display: inline-block;
+  animation: buttonParallelogramAnimation 1s infinite;
+}
+
+@keyframes buttonParallelogramAnimation {
+  0% {
+    width: 5%;
+    transform: scale(1.25, 1) skewX(20deg) translateY(3px) rotateX(40deg) rotateY(10deg) rotateZ(-10deg);
+  }
+  50% {
+    width: 5%;
+    transform: scale(1.25, 1.1) skewX(-15deg) translateY(-2px) translateZ(-30px);
+  }
+  100% {
+    width: 6%;
+    transform: scale(1.25, 1) skewX(20deg) translateY(3px) rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg);
+  }
+}

@@ -1,20 +1,36 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import {AppComponent} from './app.component';
-import {RouterOutlet} from "@angular/router";
+import {RouterModule, RouterOutlet, Routes} from "@angular/router";
 import {GetStartedComponent} from "./components/get-started/get-started.component";
-import {AppRouterModule} from "./app-router/app-router.module";
+import { AuthRegisterComponent } from './components/auth-register/auth-register.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
+
+
+
+
+const routes: Routes = [
+  {path:'',component:GetStartedComponent},
+  {path:'auth',component:AuthRegisterComponent}
+]
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetStartedComponent
+    GetStartedComponent,
+    AuthRegisterComponent
   ],
   imports: [
+    CommonModule,
+    HttpClientModule,
     BrowserModule,
     RouterOutlet,
-    AppRouterModule
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
