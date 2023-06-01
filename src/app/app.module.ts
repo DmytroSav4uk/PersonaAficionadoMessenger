@@ -8,13 +8,15 @@ import {GetStartedComponent} from "./components/get-started/get-started.componen
 import { AuthRegisterComponent } from './components/auth-register/auth-register.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import { UserMainPageComponent } from './components/user-main-page/user-main-page.component';
 
 
 
 
 const routes: Routes = [
   {path:'',component:GetStartedComponent},
-  {path:'auth',component:AuthRegisterComponent}
+  {path:'auth',component:AuthRegisterComponent},
+  {path:'main' ,component:UserMainPageComponent}
 ]
 
 
@@ -22,7 +24,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     GetStartedComponent,
-    AuthRegisterComponent
+    AuthRegisterComponent,
+    UserMainPageComponent
   ],
   imports: [
     CommonModule,

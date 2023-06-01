@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'AuthMenu';
+  src: url('~src/assets/Fonts/Persona5MenuFontPrototype-Regular.ttf') format('opentype');
+}
+
+
+.tokyo {
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  top: -108px;
+  right: -72px;
+  z-index: -3;
+  pointer-events: none;
+}
+
+.options {
+  height: 50px;
+  margin-left: 10px;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.options:hover {
+  height: 100px;
+  rotate: 360deg;
+
+}
+
+
+.buttonsField {
+  position: absolute;
+  top: -96px;
+  left: -300px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+.chat, .cards, .weather, .news {
+  transition: ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+.chat:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.news:hover, .weather:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.cards:hover {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+.rain {
+  position: absolute;
+  filter: brightness(10%);
+  top: 100px;
+  right: 336px;
+  scale: 2.5;
+  z-index: -2;
+  pointer-events: none;
+}
+
+
+.buttons {
+  position: absolute;
+  left: 70px;
+  top: 200px;
+}
+
+
+p {
+  font-family: 'AuthMenu', sans-serif;
+  font-size: 50px;
+  margin: 0 0 10px;
+}
+
+.parallelogram {
+  margin: -100px;
+  transition: ease-in-out 0.1s;
+  width: 25px;
+  height: 61px;
+  display: none;
+  background-color: rgba(0, 255, 255, 0.59);
+  transform: skewX(-20deg);
+  position: relative;
+  top: -120px;
+  left: 100px;
+  z-index: -1;
+}
+
+.parallelogram.parallelogramAnimation {
+  display: inline-block;
+  animation: tiltBounce 1s infinite;
+}
+
+@keyframes tiltBounce {
+  0% {
+    width: 60%;
+    transform: scale(1.25, 1) skewX(20deg) translateY(3px) rotateX(40deg) rotateY(10deg) rotateZ(-10deg);
+  }
+  50% {
+    width: 60%;
+    transform: scale(1.25, 1.1) skewX(-15deg) translateY(-2px) translateZ(-30px);
+  }
+  100% {
+    width: 60%;
+    transform: scale(1.25, 1) skewX(20deg) translateY(3px) rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg);
+  }
+}

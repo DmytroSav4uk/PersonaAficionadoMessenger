@@ -1,0 +1,77 @@
+<audio #audioElement>
+  <source src="./assets/Audio/music/beneathThemask_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio #rain>
+  <source src="./assets/Audio/rain.mp3" type="audio/mpeg">
+</audio>
+
+
+<img style="display: none" class="tokyo" src="assets/BackgroundPictures/userMainPage/redTokyo.png">
+<img class="tokyo" src="assets/BackgroundPictures/userMainPage/tokyo.png">
+
+<img class="buttonsField" src="assets/BackgroundPictures/userMainPage/buttonsField.png">
+
+<img class="rain" src="assets/PicturesPNG/userMainPage/rain.gif">
+
+<img class="options" src="assets/PicturesPNG/userMainPage/options.png">
+
+<div class="buttons">
+
+
+  <div
+    class="chat"
+    (mouseenter)="chatMouseEnter()"
+    (mouseleave)="chatMouseLeave()"
+  >
+    <p style="color: white">ChAT</p>
+    <div class="parallelogram"
+         [class.parallelogramAnimation]="chatHovered"
+    ></div>
+  </div>
+
+  <div
+    class="news"
+    (mouseenter)="newsMouseEnter()"
+    (mouseleave)="newsMouseLeave()"
+  >
+    <p style="color: white">NeWS</p>
+    <div class="parallelogram"
+         [class.parallelogramAnimation]="newsHovered"
+    ></div>
+  </div>
+
+  <div
+    class="weather"
+    (mouseenter)="weatherMouseEnter()"
+    (mouseleave)="weatherMouseLeave()"
+  >
+    <p style="color: white">WeathEr</p>
+    <div style="left: 120px" class="parallelogram"
+         [class.parallelogramAnimation]="weatherHovered"
+    ></div>
+  </div>
+
+  <div
+    class="cards"
+    (mouseenter)="cardsMouseEnter()"
+    (mouseleave)="cardsMouseLeave()"
+  >
+    <p style="color: white">CAlling carDs</p>
+    <div style="left: 150px" class="parallelogram"
+         [class.parallelogramAnimation]="cardsHovered"
+    ></div>
+  </div>
+
+
+  <ng-container *ngIf="user">
+    <div style="background: white">
+      <img style="height: 100px;" [src]="'http://localhost:3030/' + user?.profile?.photoUrl" alt="userProfilePicture">
+    </div>
+
+  </ng-container>
+
+
+
+
+</div>

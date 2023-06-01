@@ -23,9 +23,11 @@
 .panther {
   display: none;
   position: absolute;
-  top: -150px;
-  left: -250px;
-  scale: 75%;
+  top: -163px;
+  left: -290px;
+  width: 1920px;
+  height: 1080px;
+  scale: 70%;
   z-index: -2;
   pointer-events: none;
 }
@@ -118,7 +120,7 @@ input {
   font-size: 50px;
   color: white;
   background: none;
-  width: auto;
+  width: 400px;
   margin-bottom: 10px;
 }
 
@@ -230,7 +232,7 @@ button:disabled {
   transform: skewX(-20deg);
   position: relative;
   top: 494px;
-  right: -1151px;
+  right: -1100px;
   z-index: -1;
 }
 
