@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { CommonModule,NgIf } from '@angular/common';
 
 import {AppComponent} from './app.component';
 import {RouterModule, RouterOutlet, Routes} from "@angular/router";
@@ -9,6 +9,7 @@ import { AuthRegisterComponent } from './components/auth-register/auth-register.
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { UserMainPageComponent } from './components/user-main-page/user-main-page.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 
@@ -16,7 +17,8 @@ import { UserMainPageComponent } from './components/user-main-page/user-main-pag
 const routes: Routes = [
   {path:'',component:GetStartedComponent},
   {path:'auth',component:AuthRegisterComponent},
-  {path:'main' ,component:UserMainPageComponent}
+  {path:'main' ,component:UserMainPageComponent},
+  {path:'chat' ,component:ChatComponent}
 ]
 
 
@@ -25,7 +27,8 @@ const routes: Routes = [
     AppComponent,
     GetStartedComponent,
     AuthRegisterComponent,
-    UserMainPageComponent
+    UserMainPageComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +36,8 @@ const routes: Routes = [
     BrowserModule,
     RouterOutlet,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf
   ],
   providers: [],
   bootstrap: [AppComponent]

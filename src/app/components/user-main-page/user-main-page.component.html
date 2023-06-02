@@ -14,7 +14,18 @@
 
 <img class="rain" src="assets/PicturesPNG/userMainPage/rain.gif">
 
-<img class="options" src="assets/PicturesPNG/userMainPage/options.png">
+<div class="menuFather">
+  <img class="options" src="assets/PicturesPNG/userMainPage/options.png">
+
+  <ng-container *ngIf="user">
+    <div class="avatarFather">
+      <img [src]="'http://localhost:3030/api/profile/download/'+user?.profile?.photoUrl" class="avatar" alt="Avatar"/>
+    </div>
+  </ng-container>
+</div>
+
+
+
 
 <div class="buttons">
 
@@ -23,6 +34,7 @@
     class="chat"
     (mouseenter)="chatMouseEnter()"
     (mouseleave)="chatMouseLeave()"
+    (click)="goToChat()"
   >
     <p style="color: white">ChAT</p>
     <div class="parallelogram"
@@ -63,13 +75,6 @@
     ></div>
   </div>
 
-
-  <ng-container *ngIf="user">
-    <div style="background: white">
-      <img style="height: 100px;" [src]="'http://localhost:3030/' + user?.profile?.photoUrl" alt="userProfilePicture">
-    </div>
-
-  </ng-container>
 
 
 

@@ -1,4 +1,5 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-main-page',
@@ -16,7 +17,7 @@ export class UserMainPageComponent implements AfterViewInit{
 
    user :any;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef,private router: Router) {}
   ngAfterViewInit() {
 
     let currentUser: string | null = localStorage.getItem('currentUser');
@@ -79,4 +80,7 @@ export class UserMainPageComponent implements AfterViewInit{
   }
 
 
+  goToChat() {
+    this.router.navigateByUrl('/chat');
+  }
 }
